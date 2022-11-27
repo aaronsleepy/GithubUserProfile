@@ -16,6 +16,7 @@
 		930DCC7A2932511500FF9746 /* GithubUserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC792932511500FF9746 /* GithubUserProfileTests.swift */; };
 		930DCC842932511500FF9746 /* GithubUserProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC832932511500FF9746 /* GithubUserProfileUITests.swift */; };
 		930DCC862932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */; };
+		930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC9329337FDF00FF9746 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		930DCC7F2932511500FF9746 /* GithubUserProfileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUserProfileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		930DCC832932511500FF9746 /* GithubUserProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserProfileUITests.swift; sourceTree = "<group>"; };
 		930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserProfileUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		930DCC9329337FDF00FF9746 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				930DCC612932511300FF9746 /* GithubUserProfile */,
+				930DCC9229337FC300FF9746 /* Model */,
 				930DCC782932511500FF9746 /* GithubUserProfileTests */,
 				930DCC822932511500FF9746 /* GithubUserProfileUITests */,
 				930DCC602932511300FF9746 /* Products */,
@@ -125,6 +128,14 @@
 				930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */,
 			);
 			path = GithubUserProfileUITests;
+			sourceTree = "<group>";
+		};
+		930DCC9229337FC300FF9746 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				930DCC9329337FDF00FF9746 /* UserProfile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */,
 				930DCC672932511300FF9746 /* UserProfileViewController.swift in Sources */,
 				930DCC632932511300FF9746 /* AppDelegate.swift in Sources */,
 				930DCC652932511300FF9746 /* SceneDelegate.swift in Sources */,
