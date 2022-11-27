@@ -23,8 +23,14 @@ final class NetworkService {
         session = URLSession(configuration: configuration)
     }
     
-    func fetchProfile<T: Decodable>(_ url: URLRequest) -> AnyPublisher<T, Error> {
-        let publisher = session.dataTaskPublisher(for: url)
+    func load<T>(_ resource: Resource<T>) -> AnyPublisher<T, Error> {
+//        guard let request = resource.urlRequest else {
+//            return .fail(NetworkError.invalidRequest)
+//        }
+        
+        let request = resource.urlRequest!
+        
+        return session.dataTaskPublisher(for: request)
             .tryMap { result -> Data in
                 guard let httpReponse = result.response as? HTTPURLResponse, (200..<300).contains(httpReponse.statusCode) else {
                     let response = result.response as? HTTPURLResponse
@@ -35,7 +41,5 @@ final class NetworkService {
             }
             .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
-        
-        return publisher
     }
 }
