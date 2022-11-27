@@ -75,7 +75,7 @@ class UserProfileViewController: UIViewController {
         self.followingLabel.text = "followers: \(user.followers)"
     }
     
-    private func imageUrlToUIImage(_ imageUrl: String) -> UIImage {
+    private func imageUrlToUIImage(_ imageUrl: String) -> UIImage? {
         return nil
     }
 }
