@@ -17,6 +17,7 @@
 		930DCC842932511500FF9746 /* GithubUserProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC832932511500FF9746 /* GithubUserProfileUITests.swift */; };
 		930DCC862932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */; };
 		930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC9329337FDF00FF9746 /* UserProfile.swift */; };
+		930DCC972933885900FF9746 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC962933885900FF9746 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		930DCC832932511500FF9746 /* GithubUserProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserProfileUITests.swift; sourceTree = "<group>"; };
 		930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserProfileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		930DCC9329337FDF00FF9746 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		930DCC962933885900FF9746 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				930DCC612932511300FF9746 /* GithubUserProfile */,
 				930DCC9229337FC300FF9746 /* Model */,
+				930DCC952933882900FF9746 /* Network */,
 				930DCC782932511500FF9746 /* GithubUserProfileTests */,
 				930DCC822932511500FF9746 /* GithubUserProfileUITests */,
 				930DCC602932511300FF9746 /* Products */,
@@ -136,6 +139,14 @@
 				930DCC9329337FDF00FF9746 /* UserProfile.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		930DCC952933882900FF9746 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				930DCC962933885900FF9746 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930DCC972933885900FF9746 /* NetworkService.swift in Sources */,
 				930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */,
 				930DCC672932511300FF9746 /* UserProfileViewController.swift in Sources */,
 				930DCC632932511300FF9746 /* AppDelegate.swift in Sources */,

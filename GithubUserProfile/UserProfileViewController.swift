@@ -87,6 +87,43 @@ extension UserProfileViewController: UISearchResultsUpdating {
 extension UserProfileViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("button Clicked: \(searchBar.text)")
+        
+        guard let keyword = searchBar.text,
+              !keyword.isEmpty else { return }
+        
+        let request = createRequest(keyword)
+        
+        let networkService = NetworkService()
+        networkService.fetchProfile(request)
+            .receive(on: RunLoop.main)
+            .print("[Debug]")
+            .sink { completion in
+                print("Completion: \(completion)")
+            } receiveValue: { user in
+                self.user = user
+            }.store(in: &subscriptions)
+    }
+    
+    private func createRequest(_ keyword: String) -> URLRequest {
+        let base = "https://api.github.com/"
+        let path = "users/\(keyword)"
+        let params: [String: String] = [:]
+        let header: [String: String] = [
+            "Content-Type": "application/json"
+        ]
+        
+        var urlComponents = URLComponents(string: base + path)!
+        let queryItems = params.map { (key: String, value: String) in
+            return URLQueryItem(name: key, value: value)
+        }
+        urlComponents.queryItems = queryItems
+        
+        var request = URLRequest(url: urlComponents.url!)
+        header.forEach { (key: String, value: String) in
+            request.addValue(value, forHTTPHeaderField: key)
+        }
+        
+        return request
     }
 }
 
