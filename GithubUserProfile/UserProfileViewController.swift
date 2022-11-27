@@ -26,5 +26,9 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    private func setupUI() {
+        thumbnail.layer.cornerRadius = 80
+    }
 }
 
