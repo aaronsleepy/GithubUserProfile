@@ -63,6 +63,13 @@
                             <constraint firstItem="K6h-JQ-KaR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="zfl-xc-BWB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followerLabel" destination="aTH-Kf-UsM" id="gFN-Od-bDL"/>
+                        <outlet property="followingLabel" destination="Grw-4t-N8u" id="xEd-ci-Fbz"/>
+                        <outlet property="loginLabel" destination="K6h-JQ-KaR" id="peI-at-k5O"/>
+                        <outlet property="nameLabel" destination="vWn-uk-RaW" id="uw0-K5-SUI"/>
+                        <outlet property="thumbnail" destination="4OB-xr-rsf" id="HM6-Og-xUL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
