@@ -17,6 +17,8 @@ class UserProfileViewController: UIViewController {
     // search control
     // network
     
+    let networkService = NetworkService(configuration: .default)
+    
     var subscriptions = Set<AnyCancellable>()
     @Published private(set) var user: UserProfile?
 
@@ -93,7 +95,6 @@ extension UserProfileViewController: UISearchBarDelegate {
         
         let request = createRequest(keyword)
         
-        let networkService = NetworkService()
         networkService.fetchProfile(request)
             .receive(on: RunLoop.main)
             .print("[Debug]")

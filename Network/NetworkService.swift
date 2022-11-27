@@ -17,8 +17,14 @@ enum NetworkError: Error {
 }
 
 final class NetworkService {
-    func fetchProfile(_ url: URLRequest) -> AnyPublisher<UserProfile, Error> {
-        let publisher = URLSession.shared.dataTaskPublisher(for: url)
+    let session: URLSession
+    
+    init(configuration: URLSessionConfiguration) {
+        session = URLSession(configuration: configuration)
+    }
+    
+    func fetchProfile<T: Decodable>(_ url: URLRequest) -> AnyPublisher<T, Error> {
+        let publisher = session.dataTaskPublisher(for: url)
             .tryMap { result -> Data in
                 guard let httpReponse = result.response as? HTTPURLResponse, (200..<300).contains(httpReponse.statusCode) else {
                     let response = result.response as? HTTPURLResponse
@@ -27,7 +33,7 @@ final class NetworkService {
                 }
                 return result.data
             }
-            .decode(type: UserProfile.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
         
         return publisher
