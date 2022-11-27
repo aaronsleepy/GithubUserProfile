@@ -8,6 +8,13 @@
 import UIKit
 
 class UserProfileViewController: UIViewController {
+    
+    // TODO:
+    // setupUI
+    // data: userprofile
+    // bind
+    // search control
+    // network
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,7 +26,5 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 
