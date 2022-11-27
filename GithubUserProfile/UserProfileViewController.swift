@@ -99,6 +99,12 @@ extension UserProfileViewController: UISearchBarDelegate {
             .print("[Debug]")
             .sink { completion in
                 print("Completion: \(completion)")
+                
+                switch completion {
+                case .failure(let error):
+                    self.user = nil
+                case .finished: break
+                }
             } receiveValue: { user in
                 self.user = user
             }.store(in: &subscriptions)
