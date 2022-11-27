@@ -35,48 +35,6 @@
 			remoteGlobalIDString = 930DCC5E2932511300FF9746;
 			remoteInfo = GithubUserProfile;
 		};
-		930DCC9D293390E100FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCC98293390E100FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D351AD2D09F00CFC3EB;
-			remoteInfo = Kingfisher;
-		};
-		930DCC9F293390E100FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCC98293390E100FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D3F1AD2D09F00CFC3EB;
-			remoteInfo = KingfisherTests;
-		};
-		930DCCA6293390F900FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCCA1293390F900FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D351AD2D09F00CFC3EB;
-			remoteInfo = Kingfisher;
-		};
-		930DCCA8293390F900FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCCA1293390F900FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D3F1AD2D09F00CFC3EB;
-			remoteInfo = KingfisherTests;
-		};
-		930DCCAF293390FD00FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCCAA293390FD00FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D351AD2D09F00CFC3EB;
-			remoteInfo = Kingfisher;
-		};
-		930DCCB1293390FD00FF9746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 930DCCAA293390FD00FF9746 /* Kingfisher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1ED2D3F1AD2D09F00CFC3EB;
-			remoteInfo = KingfisherTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -95,9 +53,6 @@
 		930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserProfileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		930DCC9329337FDF00FF9746 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		930DCC962933885900FF9746 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		930DCC98293390E100FF9746 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher.xcodeproj; path = Kingfisher/Kingfisher.xcodeproj; sourceTree = SOURCE_ROOT; };
-		930DCCA1293390F900FF9746 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher.xcodeproj; path = Kingfisher/Kingfisher.xcodeproj; sourceTree = SOURCE_ROOT; };
-		930DCCAA293390FD00FF9746 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher.xcodeproj; path = Kingfisher/Kingfisher.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +127,6 @@
 		930DCC822932511500FF9746 /* GithubUserProfileUITests */ = {
 			isa = PBXGroup;
 			children = (
-				930DCC98293390E100FF9746 /* Kingfisher.xcodeproj */,
-				930DCCA1293390F900FF9746 /* Kingfisher.xcodeproj */,
-				930DCCAA293390FD00FF9746 /* Kingfisher.xcodeproj */,
 				930DCC832932511500FF9746 /* GithubUserProfileUITests.swift */,
 				930DCC852932511500FF9746 /* GithubUserProfileUITestsLaunchTests.swift */,
 			);
@@ -195,33 +147,6 @@
 				930DCC962933885900FF9746 /* NetworkService.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		930DCC99293390E100FF9746 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				930DCC9E293390E100FF9746 /* Kingfisher.framework */,
-				930DCCA0293390E100FF9746 /* KingfisherTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		930DCCA2293390F900FF9746 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				930DCCA7293390F900FF9746 /* Kingfisher.framework */,
-				930DCCA9293390F900FF9746 /* KingfisherTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		930DCCAB293390FD00FF9746 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				930DCCB0293390FD00FF9746 /* Kingfisher.framework */,
-				930DCCB2293390FD00FF9746 /* KingfisherTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,20 +239,6 @@
 			mainGroup = 930DCC562932511300FF9746;
 			productRefGroup = 930DCC602932511300FF9746 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 930DCCA2293390F900FF9746 /* Products */;
-					ProjectRef = 930DCCA1293390F900FF9746 /* Kingfisher.xcodeproj */;
-				},
-				{
-					ProductGroup = 930DCC99293390E100FF9746 /* Products */;
-					ProjectRef = 930DCC98293390E100FF9746 /* Kingfisher.xcodeproj */;
-				},
-				{
-					ProductGroup = 930DCCAB293390FD00FF9746 /* Products */;
-					ProjectRef = 930DCCAA293390FD00FF9746 /* Kingfisher.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				930DCC5E2932511300FF9746 /* GithubUserProfile */,
@@ -336,51 +247,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		930DCC9E293390E100FF9746 /* Kingfisher.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Kingfisher.framework;
-			remoteRef = 930DCC9D293390E100FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930DCCA0293390E100FF9746 /* KingfisherTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KingfisherTests.xctest;
-			remoteRef = 930DCC9F293390E100FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930DCCA7293390F900FF9746 /* Kingfisher.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Kingfisher.framework;
-			remoteRef = 930DCCA6293390F900FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930DCCA9293390F900FF9746 /* KingfisherTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KingfisherTests.xctest;
-			remoteRef = 930DCCA8293390F900FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930DCCB0293390FD00FF9746 /* Kingfisher.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Kingfisher.framework;
-			remoteRef = 930DCCAF293390FD00FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930DCCB2293390FD00FF9746 /* KingfisherTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KingfisherTests.xctest;
-			remoteRef = 930DCCB1293390FD00FF9746 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		930DCC5D2932511300FF9746 /* Resources */ = {
