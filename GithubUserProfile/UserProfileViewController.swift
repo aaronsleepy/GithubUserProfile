@@ -68,7 +68,7 @@ class UserProfileViewController: UIViewController {
             return
         }
         
-        self.thumbnail.image = nil
+        self.thumbnail.load(url: URL(string: user.avatarUrl)!)
         self.nameLabel.text = user.name
         self.loginLabel.text = user.login
         self.followerLabel.text = "following: \(user.following)"
@@ -133,3 +133,19 @@ extension UserProfileViewController: UISearchBarDelegate {
     }
 }
 
+// Kingfisher 패키지 설치 못함
+// 아래 코드 복붙
+// Ref: https://www.hackingwithswift.com/example-code/uikit/how-to-load-a-remote-image-url-into-uiimageview
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
