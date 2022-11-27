@@ -68,11 +68,15 @@ class UserProfileViewController: UIViewController {
             return
         }
         
-        self.thumbnail.image = nil
+        self.thumbnail.image = imageUrlToUIImage(user.avatarUrl)
         self.nameLabel.text = user.name
         self.loginLabel.text = user.login
         self.followerLabel.text = "following: \(user.following)"
         self.followingLabel.text = "followers: \(user.followers)"
+    }
+    
+    private func imageUrlToUIImage(_ imageUrl: String) -> UIImage {
+        return nil
     }
 }
 
