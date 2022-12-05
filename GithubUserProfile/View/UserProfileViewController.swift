@@ -16,11 +16,9 @@ class UserProfileViewController: UIViewController {
     // bind
     // search control
     // network
-    
-    let networkService = NetworkService(configuration: .default)
-    
     var subscriptions = Set<AnyCancellable>()
-    @Published private(set) var user: UserProfile?
+    
+    var viewModel: UserProfileViewModel!
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,6 +28,8 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserProfileViewModel(networkService: NetworkService(configuration: .default), selectedUser: nil)
+        
         setupUI()
         embedSearchControl()
         bind()
@@ -53,28 +53,24 @@ class UserProfileViewController: UIViewController {
     }
     
     private func bind() {
-        $user.receive(on: RunLoop.main)
+        viewModel.selectedUser
+            .receive(on: RunLoop.main)
             .sink { result in
-                self.update(result)
+                self.update()
             }.store(in: &subscriptions)
     }
     
-    private func update(_ user: UserProfile?) {
-        guard let user = user else {
-            self.thumbnail.image = nil
-            self.nameLabel.text = "n/a"
-            self.loginLabel.text = "n/a"
-            self.followerLabel.text = ""
-            self.followingLabel.text = ""
-            
-            return
-        }
+    private func update() {
+        self.nameLabel.text = viewModel.name
+        self.loginLabel.text = viewModel.login
+        self.followerLabel.text = viewModel.follower
+        self.followingLabel.text = viewModel.following
         
-        self.thumbnail.load(url: URL(string: user.avatarUrl)!)
-        self.nameLabel.text = user.name
-        self.loginLabel.text = user.login
-        self.followerLabel.text = "following: \(user.following)"
-        self.followingLabel.text = "followers: \(user.followers)"
+        if (viewModel.imageUrl == nil) {
+            self.thumbnail.image = nil
+        } else {
+            self.thumbnail.load(url: viewModel.imageUrl!)
+        }
     }
 }
 
@@ -93,26 +89,7 @@ extension UserProfileViewController: UISearchBarDelegate {
         guard let keyword = searchBar.text,
               !keyword.isEmpty else { return }
         
-        let resource = Resource<UserProfile>(
-            base: "https://api.github.com/",
-            path: "users/\(keyword)",
-            params: [:],
-            header: [:])
-        
-        networkService.load(resource)
-            .receive(on: RunLoop.main)
-            .print("[Debug]")
-            .sink { completion in
-                print("Completion: \(completion)")
-                
-                switch completion {
-                case .failure(let error):
-                    self.user = nil
-                case .finished: break
-                }
-            } receiveValue: { user in
-                self.user = user
-            }.store(in: &subscriptions)
+        viewModel.search(keyword: keyword)
     }
 }
 
