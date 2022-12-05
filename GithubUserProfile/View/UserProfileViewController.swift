@@ -16,11 +16,9 @@ class UserProfileViewController: UIViewController {
     // bind
     // search control
     // network
-    
-    let networkService = NetworkService(configuration: .default)
-    
     var subscriptions = Set<AnyCancellable>()
-    @Published private(set) var user: UserProfile?
+    
+    var viewModel: UserProfileViewModel!
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,6 +28,8 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserProfileViewModel(networkService: NetworkService(configuration: .default))
+        
         setupUI()
         embedSearchControl()
         bind()
@@ -53,7 +53,7 @@ class UserProfileViewController: UIViewController {
     }
     
     private func bind() {
-        $user.receive(on: RunLoop.main)
+        viewModel.$user.receive(on: RunLoop.main)
             .sink { result in
                 self.update(result)
             }.store(in: &subscriptions)
@@ -93,26 +93,7 @@ extension UserProfileViewController: UISearchBarDelegate {
         guard let keyword = searchBar.text,
               !keyword.isEmpty else { return }
         
-        let resource = Resource<UserProfile>(
-            base: "https://api.github.com/",
-            path: "users/\(keyword)",
-            params: [:],
-            header: [:])
-        
-        networkService.load(resource)
-            .receive(on: RunLoop.main)
-            .print("[Debug]")
-            .sink { completion in
-                print("Completion: \(completion)")
-                
-                switch completion {
-                case .failure(let error):
-                    self.user = nil
-                case .finished: break
-                }
-            } receiveValue: { user in
-                self.user = user
-            }.store(in: &subscriptions)
+        viewModel.search(keyword: keyword)
     }
 }
 
