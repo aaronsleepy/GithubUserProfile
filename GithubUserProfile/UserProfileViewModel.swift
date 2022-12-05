@@ -11,14 +11,35 @@ import Combine
 final class UserProfileViewModel {
     let networkService: NetworkService
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, selectedUser: UserProfile?) {
         self.networkService = networkService
+        self.selectedUser = CurrentValueSubject(selectedUser)
+    }
+    
+    var name: String {
+        return selectedUser.value?.name ?? "n/a"
+    }
+    var login: String {
+        return selectedUser.value?.login ?? "n/a"
+    }
+    var follower: String {
+        guard let value = selectedUser.value?.followers else { return "" }
+        return "followers: \(value)"
+    }
+    var following: String {
+        guard let value = selectedUser.value?.following else { return "" }
+        return "followings: \(value)"
+    }
+    var imageUrl: URL? {
+        guard let value = selectedUser.value?.avatarUrl else { return nil }
+        
+        return URL(string: value)
     }
     
     var subscriptions = Set<AnyCancellable>()
     
     // Data => Output
-    @Published private(set) var user: UserProfile?
+    var selectedUser: CurrentValueSubject<UserProfile?, Never>
     
     // User Action => Input
     func search(keyword: String) {
@@ -36,11 +57,11 @@ final class UserProfileViewModel {
                 
                 switch completion {
                 case .failure(let error):
-                    self.user = nil
+                    self.selectedUser.send(nil)
                 case .finished: break
                 }
             } receiveValue: { user in
-                self.user = user
+                self.selectedUser.send(user)
             }.store(in: &subscriptions)
     }
 }
