@@ -6,6 +6,8 @@ Github Profile App Demo - UIKit/Storyboard 예제
 
 ## Branch
 * part6/network
+* part7/mvvm
+  * MVVM 아키텍처로 리팩터링
 
 
 ## 학습자료
