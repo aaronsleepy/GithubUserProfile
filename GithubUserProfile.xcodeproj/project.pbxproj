@@ -19,6 +19,7 @@
 		930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC9329337FDF00FF9746 /* UserProfile.swift */; };
 		930DCC972933885900FF9746 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCC962933885900FF9746 /* NetworkService.swift */; };
 		930DCCB42933974800FF9746 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DCCB32933974800FF9746 /* Resource.swift */; };
+		932A629D293DF32E003427D3 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A629C293DF32E003427D3 /* UserProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		930DCC9329337FDF00FF9746 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		930DCC962933885900FF9746 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		930DCCB32933974800FF9746 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		932A629C293DF32E003427D3 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				930DCC612932511300FF9746 /* GithubUserProfile */,
-				930DCC9229337FC300FF9746 /* Model */,
-				930DCC952933882900FF9746 /* Network */,
 				930DCC782932511500FF9746 /* GithubUserProfileTests */,
 				930DCC822932511500FF9746 /* GithubUserProfileUITests */,
 				930DCC602932511300FF9746 /* Products */,
@@ -109,8 +109,10 @@
 			children = (
 				930DCC622932511300FF9746 /* AppDelegate.swift */,
 				930DCC642932511300FF9746 /* SceneDelegate.swift */,
-				930DCC662932511300FF9746 /* UserProfileViewController.swift */,
-				930DCC682932511300FF9746 /* Main.storyboard */,
+				932A629C293DF32E003427D3 /* UserProfileViewModel.swift */,
+				932A629B293DF2EA003427D3 /* View */,
+				930DCC9229337FC300FF9746 /* Model */,
+				930DCC952933882900FF9746 /* Network */,
 				930DCC6B2932511500FF9746 /* Assets.xcassets */,
 				930DCC6D2932511500FF9746 /* LaunchScreen.storyboard */,
 				930DCC702932511500FF9746 /* Info.plist */,
@@ -150,6 +152,15 @@
 				930DCCB32933974800FF9746 /* Resource.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		932A629B293DF2EA003427D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				930DCC682932511300FF9746 /* Main.storyboard */,
+				930DCC662932511300FF9746 /* UserProfileViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				930DCC972933885900FF9746 /* NetworkService.swift in Sources */,
 				930DCC9429337FDF00FF9746 /* UserProfile.swift in Sources */,
 				930DCC672932511300FF9746 /* UserProfileViewController.swift in Sources */,
+				932A629D293DF32E003427D3 /* UserProfileViewModel.swift in Sources */,
 				930DCCB42933974800FF9746 /* Resource.swift in Sources */,
 				930DCC632932511300FF9746 /* AppDelegate.swift in Sources */,
 				930DCC652932511300FF9746 /* SceneDelegate.swift in Sources */,
